@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-config.dtd">
+  
+<configuration>
+  <settings>
+    <setting name="logImpl" value="LOG4J2"/>
+  </settings>
+
+
+
+
+  <typeAliases>
+	    <typeAlias type="com.pcwk.ehr.domain.UserVO" alias="UserVO"/>
+	    <typeAlias type="com.pcwk.ehr.cmn.BookmarkVO" alias="BookmarkVO"/>
+	    <typeAlias type="com.pcwk.ehr.domain.BoardVO" alias="BoardVO"/>
+	    <typeAlias type="com.pcwk.ehr.domain.ReplyVO" alias="ReplyVO" />
+		<typeAlias type="com.pcwk.ehr.cmn.MyPageVO" alias="MypageVO"/>
+		<typeAlias type="com.pcwk.ehr.cmn.AdminPageVO" alias="AdminPageVO"/>
+		
+   </typeAliases>
+
+  
+  
+</configuration>

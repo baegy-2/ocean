@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pcwk.ehr.mypage">
+    <resultMap id="UserMap" type="com.pcwk.ehr.cmn.MyPageVO">
+        <result column="USER_NO"         property="userNo"       />
+        <result column="USER_ID"      property="userId"    />
+        <result column="PASSWD"       property="passwd"     />
+        <result column="USER_NAME"         property="name"       />
+        <result column="BIRTHDAY"         property="birthday"       />
+        <result column="GENDER"        property="gender"      />
+        <result column="PHONE_NO"   property="phoneNo"  />
+        <result column="EMAIL"        property="email"      />
+        <result column="USER_LEVEL"      property="userLV"    />
+        <result column="KEYWORD"      property="keyword"    />
+        <result column="WITHDRAWAL"      property="del"    />
+    </resultMap>
+
+    <select id="getMemberById" parameterType="string" resultMap="UserMap">
+        SELECT *
+               
+        FROM MEMBER
+        WHERE user_Id = #{userId}
+    </select>
+    
+    
+    <update id="userUpdate" parameterType="com.pcwk.ehr.cmn.MyPageVO">
+        UPDATE MEMBER
+        SET phone_no = #{phoneNo},
+            birthday = #{birthday},
+            gender = #{gender},
+            email = #{email},
+            keyword = #{keyword}
+        WHERE user_id = #{userId}
+    </update>
+    
+    <update id="withdraw" parameterType="com.pcwk.ehr.cmn.MyPageVO">
+        UPDATE member
+        SET withdrawal = 1
+        WHERE user_id = #{userId}
+    </update>
+    
+
+
+
+</mapper>
